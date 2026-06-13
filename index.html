@@ -126,11 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   #ajuda ~ .sec{padding-block:clamp(36px,4.5vw,64px)}
   #ajuda .head-2 h2,
   #ajuda ~ .sec .head-2 h2,
-  #ajuda ~ .sec .about h2,
-  #ajuda ~ .sec .cinfo h2{margin-top:10px}
+  #ajuda ~ .sec .about h2{margin-top:10px}
   #ajuda .head-2 p,
-  #ajuda ~ .sec .head-2 p,
-  #ajuda ~ .sec .cinfo>p{margin-top:10px}
+  #ajuda ~ .sec .head-2 p{margin-top:10px}
   #ajuda ~ .sec .svc-row,
   #ajuda ~ .sec .steps,
   #ajuda ~ .sec .faq{margin-top:20px}
@@ -149,9 +147,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   #ajuda ~ .sec .faq .ans{padding:2px 40px 10px 0;font-size:.95rem;line-height:1.5}
   #ajuda ~ .sec .faq .ico{top:16px}
   #perguntas{padding-block:clamp(28px,3.5vw,52px)}
-  #ajuda ~ .sec .crows{margin-top:22px}
-  #ajuda ~ .sec .crow{padding:12px 0}
-  #ajuda ~ .sec .cinfo .btn{margin-top:22px}
 
   /* themes grid (compact) */
   .theme-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px clamp(30px,3.4vw,52px);margin-top:20px}
@@ -216,21 +211,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq details[open] summary{color:var(--rose)}
   .faq .ans{padding:0 48px 22px 0;color:var(--muted);font-size:1rem;font-weight:300;line-height:1.6;max-width:76ch}
 
-  /* contact */
-  .contact{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,4vw,60px);align-items:stretch}
-  .cinfo h2{font-size:clamp(1.85rem,3.6vw,2.55rem);margin-top:14px;color:#fcf8f2}
-  .cinfo>p{color:#bcc6dd;margin-top:14px;max-width:44ch;font-weight:300}
-  .crows{margin-top:30px;border-top:1px solid var(--line-d)}
-  .crow{padding:16px 0;border-bottom:1px solid var(--line-d);display:grid;grid-template-columns:128px 1fr;gap:18px;align-items:baseline}
-  .crow b{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-l);font-weight:600}
-  .crow a,.crow span{color:#e9eef8;font-size:1rem;font-weight:300}
-  .crow a:hover{color:var(--rose-l)}
-  .cinfo .btn{margin-top:30px}
-  .clegal{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line-d)}
-  .clegal a{font-size:.82rem;color:#aab4cd;font-weight:300;transition:color .25s}
-  .clegal a:hover{color:var(--rose-l)}
-  .map{border-radius:4px;overflow:hidden;border:1px solid rgba(216,171,143,.22);min-height:360px}
-  .map iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(.2) contrast(1.05)}
+  /* footer — estilo Linktree */
+  .lt-footer{background:#101010;padding:clamp(34px,4.2vw,54px) 0 30px}
+  .lt-wrap{max-width:var(--maxw)}
+  .lt-grid{display:grid;grid-template-columns:minmax(210px,248px) minmax(200px,272px) 1fr;gap:clamp(18px,2.8vw,32px);align-items:stretch}
+  .lt-card{background:var(--navy);border-radius:16px;padding:24px 18px 20px;text-align:center;
+    box-shadow:0 16px 36px -24px rgba(0,0,0,.55);height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .lt-card img{height:38px;width:auto}
+  .lt-name{margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;
+    color:#e8edf8;letter-spacing:.2px;line-height:1.3}
+  .lt-role{margin-top:8px;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--rose-l);font-weight:600}
+  .lt-crp{margin-top:3px;font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--rose-l);font-weight:600}
+  .lt-side{display:contents}
+  .lt-mid{display:flex;flex-direction:column;justify-content:center;min-width:0}
+  .lt-links{display:flex;flex-direction:column;gap:8px;margin-top:0;max-width:272px}
+  .lt-link{display:flex;align-items:center;gap:12px;background:#3f3a34;color:#fff;font-weight:700;
+    font-size:.8rem;letter-spacing:.01em;padding:12px 14px;border-radius:12px;
+    transition:background .22s var(--e),transform .22s var(--e)}
+  .lt-link:hover{background:#4c4640;transform:translateY(-1px)}
+  .lt-link--primary{padding:12px 14px;font-size:.84rem;background:#4a443c}
+  .lt-link--primary:hover{background:#565048}
+  .lt-ico{flex-shrink:0;width:32px;height:32px;background:#fff;border-radius:9px;
+    display:flex;align-items:center;justify-content:center}
+  .lt-ico svg{width:15px;height:15px}
+  .lt-ico--cal svg,.lt-ico--pin svg,.lt-ico--ig svg,.lt-ico--in svg{fill:#111}
+  .lt-ico--ig svg{fill:#111}
+  .lt-ico--in svg{fill:#111}
+  .lt-ico--psi{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:#111;line-height:1}
+  .lt-label{flex:1;text-align:center;padding-right:32px}
+  .lt-info{display:flex;flex-direction:column;justify-content:center;min-width:0;padding-left:clamp(4px,1.5vw,16px)}
+  .lt-info-kick{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-l);font-weight:600;margin-bottom:12px}
+  .lt-rows{border-top:1px solid rgba(255,255,255,.08)}
+  .lt-row{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);display:grid;
+    grid-template-columns:92px 1fr;gap:12px;align-items:baseline}
+  .lt-row b{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rose-l);font-weight:600}
+  .lt-row a,.lt-row span{font-size:.8rem;color:#bcc6dd;font-weight:300;line-height:1.45}
+  .lt-row a:hover{color:var(--rose-l)}
+  .lt-legal{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;padding-top:14px;
+    border-top:1px solid rgba(255,255,255,.08)}
+  .lt-legal a{font-size:.72rem;color:#7a7f8c;font-weight:400;transition:color .2s}
+  .lt-legal a:hover{color:var(--rose-l)}
 
   .waf{position:fixed;right:20px;bottom:20px;z-index:80;width:54px;height:54px;border-radius:50%;background:#25D366;
     display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -10px rgba(7,23,59,.6);transition:transform .3s var(--e)}
@@ -246,6 +268,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   @media (max-width:980px){
+    .lt-grid{grid-template-columns:1fr;max-width:380px;margin-inline:auto}
+    .lt-card{height:auto}
+    .lt-side{display:flex;flex-direction:column;gap:18px}
+    .lt-mid,.lt-info{padding-left:0}
+    .lt-links{max-width:none}
+    .lt-info-kick{margin-bottom:10px}
     .hero-grid{grid-template-columns:1fr;gap:42px}
     .hero-photo{max-width:420px;width:100%;margin-inline:auto}.hero-photo::after{display:none}
     .theme-list{grid-template-columns:repeat(2,1fr)}
@@ -258,7 +286,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #ajuda ~ .sec .svc-col{padding:22px 0}
     .svc-col:first-child{border-top:0;padding-top:0}
     .steps{grid-template-columns:repeat(2,1fr);gap:32px 22px}
-    .contact{grid-template-columns:1fr}
   }
   @media (max-width:600px){
     nav.menu,.nav-r .btn{display:none}
@@ -273,7 +300,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .creds li{grid-template-columns:1fr;gap:4px}
     .steps{grid-template-columns:1fr 1fr}
     .tele{grid-template-columns:1fr;gap:10px}
-    .crow{grid-template-columns:1fr;gap:4px}
+    .lt-row{grid-template-columns:1fr;gap:4px}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
   :focus-visible{outline:2px solid var(--rose-l);outline-offset:3px}
@@ -464,30 +491,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<footer class="sec navy on-dark" id="contato">
-  <div class="wrap contact">
-    <div class="cinfo rv">
-      <span class="kicker">Contato</span>
-      <h2>Vamos conversar</h2>
-      <p>Dar o primeiro passo pode ser o mais difícil. Estou à disposição para te ouvir e esclarecer qualquer dúvida antes de começarmos.</p>
-      <div class="crows">
-        <div class="crow"><b>WhatsApp</b><a href="https://wa.me/5512991361899?text=Ol%C3%A1%2C%20Andr%C3%A9%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">(12) 99136-1899</a></div>
-        <div class="crow"><b>E-mail</b><a href="mailto:psicologoandrelucca@gmail.com">psicologoandrelucca@gmail.com</a></div>
-        <div class="crow"><b>Consultório</b><span>R. Barão da Pedra Negra, 500 — Centro<br>Taubaté - SP, 12020-220</span></div>
-        <div class="crow"><b>Atendimento</b><span>Particular · Presencial e online</span></div>
+<footer class="lt-footer" id="contato">
+  <div class="wrap lt-wrap rv">
+    <div class="lt-grid">
+      <div class="lt-card">
+        <img src="IMG/logo-mark.webp" alt="" width="38" height="38" />
+        <p class="lt-name">André Lucca Rodrigues Lima</p>
+        <p class="lt-role">Psicólogo | Neuropsicólogo</p>
+        <p class="lt-crp">CRP 06/232106</p>
       </div>
-      <a class="btn btn-solid" href="https://wa.me/5512991361899?text=Ol%C3%A1%2C%20Andr%C3%A9%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">
-        <svg class="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.476-.92z"/></svg>
-        Chamar no WhatsApp
-      </a>
-      <nav class="clegal" aria-label="Documentos legais">
-        <a href="privacy-policy.html">Política de Privacidade</a>
-        <a href="terms-of-use.html">Termos de Uso</a>
-      </nav>
-    </div>
-    <div class="map rv">
-      <iframe title="Localização do consultório em Taubaté" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=R.%20Bar%C3%A3o%20da%20Pedra%20Negra%2C%20500%20-%20Centro%2C%20Taubat%C3%A9%20-%20SP%2C%2012020-220&output=embed"></iframe>
+      <div class="lt-side">
+        <div class="lt-mid">
+          <nav class="lt-links" aria-label="Links rápidos">
+            <a class="lt-link lt-link--primary" href="https://wa.me/5512991361899?text=Ol%C3%A1%2C%20Andr%C3%A9%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">
+              <span class="lt-ico lt-ico--cal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 2a1 1 0 00-1 1v1H5a3 3 0 00-3 3v11a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3h-1V3a1 1 0 10-2 0v1H8V3a1 1 0 00-1-1zm12 7H5v9a1 1 0 001 1h12a1 1 0 001-1V9zM8 12h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></span>
+              <span class="lt-label">Agendar Uma Consulta</span>
+            </a>
+            <a class="lt-link" href="https://share.google/zecdQfGXOI5bUFeE2" target="_blank" rel="noopener">
+              <span class="lt-ico lt-ico--pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg></span>
+              <span class="lt-label">Consultório</span>
+            </a>
+            <a class="lt-link" href="https://www.instagram.com/psi_andrelucca" target="_blank" rel="noopener">
+              <span class="lt-ico lt-ico--ig" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm6.25-2.88a1.12 1.12 0 11-1.12 1.12 1.12 1.12 0 011.12-1.12z"/></svg></span>
+              <span class="lt-label">Instagram</span>
+            </a>
+            <a class="lt-link" href="https://www.linkedin.com/in/andreluccarodrigueslima" target="_blank" rel="noopener">
+              <span class="lt-ico lt-ico--in" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.06h4.56V23.5H.22zM8.17 8.06h4.37v2.11h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.71h-4.56v-7.72c0-1.84-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.07v7.85H8.17z"/></svg></span>
+              <span class="lt-label">LinkedIn</span>
+            </a>
+            <a class="lt-link" href="https://site.cfp.org.br/wp-content/uploads/2012/07/codigo-de-etica-psicologia.pdf" target="_blank" rel="noopener">
+              <span class="lt-ico lt-ico--psi" aria-hidden="true">Ψ</span>
+              <span class="lt-label">Código de Ética do Psicólogo</span>
+            </a>
+          </nav>
+        </div>
+        <div class="lt-info">
+          <p class="lt-info-kick">Contato</p>
+          <div class="lt-rows">
+            <div class="lt-row"><b>WhatsApp</b><a href="https://wa.me/5512991361899?text=Ol%C3%A1%2C%20Andr%C3%A9%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">(12) 99136-1899</a></div>
+            <div class="lt-row"><b>E-mail</b><a href="mailto:psicologoandrelucca@gmail.com">psicologoandrelucca@gmail.com</a></div>
+            <div class="lt-row"><b>Consultório</b><span>R. Barão da Pedra Negra, 500 — Centro<br>Taubaté-SP, 12020-220</span></div>
+            <div class="lt-row"><b>Atendimento</b><span>Particular · Presencial e online</span></div>
+          </div>
+          <nav class="lt-legal" aria-label="Documentos legais">
+            <a href="privacy-policy.html">Política de Privacidade</a>
+            <a href="terms-of-use.html">Termos de Uso</a>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
