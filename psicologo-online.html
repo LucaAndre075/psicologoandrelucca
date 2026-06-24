@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:height" content="906" />
 <link rel="icon" type="image/png" href="IMG/favicon-96.png" />
 <link rel="apple-touch-icon" href="IMG/apple-touch-icon.png" />
-<link rel="preload" as="image" href="IMG/hero.webp" type="image/webp" fetchpriority="high" />
+<link rel="preload" as="image" href="IMG/hero-consultorio.webp" type="image/webp" fetchpriority="high" />
 <link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="fonts/fonts.css" />
@@ -99,6 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero h1{font-size:clamp(2.1rem,4.3vw,3.4rem);font-weight:500;color:#fcf8f2;margin:18px 0 0}
   .hero h1 em{font-style:italic;color:var(--rose-l)}
   .hero .lead{margin-top:18px;font-size:1.03rem;color:#bcc6dd;max-width:46ch;font-weight:300;line-height:1.65;text-wrap:pretty}
+  .hero .lead + .lead{margin-top:.3em}
   .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:28px}
   .hero-meta{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:30px;padding-top:20px;
     border-top:1px solid rgba(216,171,143,.18);font-size:.8rem;color:#aab4cd;letter-spacing:.03em}
@@ -107,6 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero-photo{position:relative}
   .hero-photo .img{position:relative;z-index:2;border-radius:4px;overflow:hidden;background:#05122f}
   .hero-photo .img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.25}
+  .hero-photo .img img.hero-img-consultorio{aspect-ratio:2/3;object-position:center 32%}
   .hero-photo::after{content:"";position:absolute;z-index:1;right:-14px;top:22px;bottom:22px;width:58%;
     border:1px solid rgba(216,171,143,.32);border-radius:4px}
 
@@ -162,7 +164,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .about-photo .img{border-radius:4px;overflow:hidden}
   .about-photo .about-img--mobile{display:none}
   .about-photo .about-img--desktop img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center 38%}
+  .about-photo .about-img--desktop img.hero-portrait{aspect-ratio:853/906;object-position:center 18%}
   .about-photo .about-img--mobile img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 42%}
+  .about-photo .about-img--mobile img.hero-portrait{object-position:center 12%}
   .about-photo::after{content:"";position:absolute;left:-14px;bottom:18px;top:18px;width:52%;z-index:-1;border:1px solid var(--line)}
   .about h2{font-size:clamp(1.85rem,3.6vw,2.55rem);margin-top:14px}
   .about .role{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-top:10px}
@@ -277,6 +281,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .lt-links{max-width:none}
     .lt-info-kick{margin-bottom:10px}
     .hero-grid{grid-template-columns:1fr;gap:42px}
+    .hero .lead + .lead{margin-top:1.15em}
     .hero-photo{max-width:420px;width:100%;margin-inline:auto}.hero-photo::after{display:none}
     .theme-list{grid-template-columns:repeat(2,1fr)}
     .about{grid-template-columns:1fr;gap:38px}
@@ -337,7 +342,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <span class="kicker">Psicólogo online · CRP 06/232106</span>
       <h1>Psicólogo online</h1>
-      <p class="lead">Atendimento psicológico online para quem busca apoio com ansiedade, depressão, esgotamento e dificuldade para lidar com as emoções.<br>Com sigilo profissional e base em evidências científicas.</p>
+      <p class="lead">Atendimento psicológico online para quem busca apoio com ansiedade, depressão, esgotamento e dificuldade para lidar com as emoções.</p>
+      <p class="lead">Com sigilo profissional | Ampla experiência em atendimento à adultos e crianças com TDAH.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="https://wa.me/5512991361899?text=Ol%C3%A1%2C%20Andr%C3%A9%21%20Vi%20seu%20an%C3%BAncio%20de%20psic%C3%B3logo%20online%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">
           <svg class="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.476-.92z"/></svg>
@@ -349,7 +355,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="hero-photo rv">
-      <div class="img"><img src="IMG/hero.webp" alt="André Lucca — psicólogo online, CRP 06/232106" width="853" height="906" fetchpriority="high" /></div>
+      <div class="img"><img class="hero-img-consultorio" src="IMG/hero-consultorio.webp" alt="André Lucca — psicólogo online em consultório" width="720" height="1080" fetchpriority="high" /></div>
     </div>
   </div>
 </section>
@@ -382,10 +388,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap about">
     <div class="about-photo rv">
       <div class="img about-img about-img--desktop">
-        <img src="IMG/sobre-desktop.webp" alt="André Lucca em seu consultório em Taubaté" width="400" height="600" loading="lazy" />
+        <img class="hero-portrait" src="IMG/hero.webp" alt="André Lucca — psicólogo online, CRP 06/232106" width="853" height="906" loading="lazy" />
       </div>
       <div class="img about-img about-img--mobile">
-        <img src="IMG/sobre-mobile.webp" srcset="IMG/sobre-mobile-560.webp 560w, IMG/sobre-mobile.webp 853w" sizes="(max-width:980px) 100vw, 0px" alt="André Lucca em seu consultório em Taubaté" width="853" height="640" loading="lazy" />
+        <img class="hero-portrait" src="IMG/hero.webp" alt="André Lucca — psicólogo online, CRP 06/232106" width="853" height="906" loading="lazy" />
       </div>
     </div>
     <div class="about-body rv">
